@@ -1,0 +1,22 @@
+sudo: required
+services:
+- docker
+language: bash
+script:
+# prepare qemu
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+# build image
+- docker build -t infothrill/rpi-couchpotato .
+# test image
+- docker run infothrill/rpi-couchpotato /usr/bin/python /app/CouchPotatoServer/CouchPotato.py --help
+# show git commit hash of couchpotato
+- docker run infothrill/rpi-couchpotato sh -c "cd /app/CouchPotatoServer/ && git log -1 --format=%h"
+# push image
+#- >
+#  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+#    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+#    TAG=$(docker run infothrill/rpi-couchpotato sh -c "cd /app/CouchPotatoServer/ && git log -1 --format=%h")
+#    docker tag infothrill/rpi-couchpotato infothrill/rpi-couchpotato:$TAG
+#    docker push infothrill/rpi-couchpotato:$TAG
+#    docker push infothrill/rpi-couchpotato
+#  fi
