@@ -12,11 +12,11 @@ script:
 # show git commit hash of couchpotato
 - docker run infothrill/rpi-couchpotato sh -c "cd /app/CouchPotatoServer/ && git log -1 --format=%h"
 # push image
-#- >
-#  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-#    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-#    TAG=$(docker run infothrill/rpi-couchpotato sh -c "cd /app/CouchPotatoServer/ && git log -1 --format=%h")
-#    docker tag infothrill/rpi-couchpotato infothrill/rpi-couchpotato:$TAG
-#    docker push infothrill/rpi-couchpotato:$TAG
-#    docker push infothrill/rpi-couchpotato
-#  fi
+- >
+  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+    TAG=$(docker run infothrill/rpi-couchpotato sh -c "cd /app/CouchPotatoServer/ && git log -1 --format=%h")
+    docker tag infothrill/rpi-couchpotato infothrill/rpi-couchpotato:$TAG
+    docker push infothrill/rpi-couchpotato:$TAG
+    docker push infothrill/rpi-couchpotato
+  fi
