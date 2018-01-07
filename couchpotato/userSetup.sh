@@ -10,10 +10,10 @@ if [ -n "$PUID" ] && [ ! "$(id -u root)" -eq "$PUID" ]; then
     if [ ! "$(id -g ${RUN_AS})" -eq "$PGID" ]; then groupmod -o -g "$PGID" ${RUN_AS} ; fi
 
     echo "Setting owner for paths to ${PUID}:${PGID}"
-    chown -R ${RUN_AS}:${RUN_AS} /app
-    chown ${RUN_AS}:${RUN_AS} \
-        /datadir
-    ls -la /datadir
+    chown -R ${RUN_AS}:${RUN_AS} /CouchPotatoServer
+    chown ${RUN_AS}:${RUN_AS} /data
+	chown ${RUN_AS}:${RUN_AS} /config
+    ls -la /data
 fi
 
 echo "
