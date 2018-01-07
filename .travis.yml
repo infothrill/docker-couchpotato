@@ -12,6 +12,7 @@ script:
 # show git commit hash of couchpotato
 - docker run infothrill/rpi-couchpotato sh -c "cd /CouchPotatoServer/ && git log -1 --format=%h"
 # push image
+after_success:
 - >
   if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
