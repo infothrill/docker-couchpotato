@@ -13,7 +13,7 @@ RUN apt-get update \
     && dpkg -i dumb-init_*.deb \
     && rm -rf dumb-init_*.deb \
     && git clone https://github.com/CouchPotato/CouchPotatoServer.git --depth 1 /CouchPotatoServer \
-    && apt-get remove --purge -y python-pip git \
+    && apt-get remove --purge -y python-pip build-essential \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
