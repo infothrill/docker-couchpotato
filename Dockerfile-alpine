@@ -5,7 +5,7 @@ FROM monstrenyatko/rpi-alpine:3.7
 # Update packages and install software
 RUN apk -U update && \
         apk -U upgrade && \
-        apk -U add --no-cache dumb-init python py-lxml py-openssl && \
+        apk -U add --no-cache dumb-init python py-lxml py-openssl sudo && \
         rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
 ADD couchpotato/ /etc/couchpotato/
