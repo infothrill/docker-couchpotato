@@ -1,2 +1,3 @@
 #!/bin/bash
+head ../Makefile
 DIR=$(pwd) make -C .. build post_push
