@@ -1,4 +1,3 @@
-# TAG os provided by external shell script
 TAG=$(shell ./prepare_source.sh)
 # DIR points to the directory with the Dockerfile to be built:
 DIR ?= $(addprefix $(PWD), /x86-alpine)
