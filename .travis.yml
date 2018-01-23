@@ -7,10 +7,8 @@ script:
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 # build image
 - make build
-- SUFFIX=-alpine make build
 # test image
 - make test
-- SUFFIX=-alpine make test
 #after_success:
 ## push image
 #- >
