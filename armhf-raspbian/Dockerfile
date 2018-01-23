@@ -21,4 +21,3 @@ RUN groupmod -g 1000 users \
 EXPOSE 5050
 
 CMD ["dumb-init", "/etc/couchpotato/start.sh"]
-

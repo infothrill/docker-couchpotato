@@ -1,6 +1,6 @@
-# Couchpotato for raspberry pi
+# Couchpotato for x86
 
-FROM monstrenyatko/rpi-alpine:3.7
+FROM alpine:3.7
 
 # Update packages and install software
 RUN apk -U update && \
@@ -18,4 +18,3 @@ RUN addgroup -g 911 -S abc && adduser -S -u 911 -h /data -s /bin/false -G abc ab
 EXPOSE 5050
 
 CMD ["dumb-init", "/etc/couchpotato/start.sh"]
-
