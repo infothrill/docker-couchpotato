@@ -1,4 +1,4 @@
-TAG=$(shell ./prepare_source.sh)
+TAG := $(shell ./prepare_source.sh)
 # DIR points to the directory with the Dockerfile to be built:
 DIR ?= $(addprefix $(PWD), /x86-alpine)
 DOCKER_REPO ?= couchpotato-$(shell basename $(DIR))
