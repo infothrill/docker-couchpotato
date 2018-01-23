@@ -1,4 +1,4 @@
-# docker couchpotato [![Build Status](https://travis-ci.org/infothrill/rpi-couchpotato.svg?branch=master)](https://travis-ci.org/infothrill/rpi-couchpotato)
+# docker couchpotato [![Build Status](https://travis-ci.org/infothrill/docker-couchpotato.svg?branch=master)](https://travis-ci.org/infothrill/docker-couchpotato)
 
 Docker images with [CouchPotato](https://couchpota.to/)
 
