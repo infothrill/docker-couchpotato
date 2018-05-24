@@ -12,7 +12,7 @@ RUN apt-get update && \
 ADD couchpotato/ /etc/couchpotato/
 ADD CouchPotatoServer /CouchPotatoServer
 
-VOLUME ['/data', '/config', '/downloads', '/movies', '/movies-ro']
+VOLUME ["/data", "/config", "/downloads", "/movies", "/movies-ro"]
 
 RUN groupmod -g 1000 users \
     && useradd -u 911 -U -d /data -s /bin/false abc \

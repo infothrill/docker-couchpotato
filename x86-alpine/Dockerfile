@@ -11,7 +11,7 @@ RUN apk -U update && \
 ADD couchpotato/ /etc/couchpotato/
 ADD CouchPotatoServer /CouchPotatoServer
 
-VOLUME ['/data', '/config', '/downloads', '/movies', '/movies-ro']
+VOLUME ["/data", "/config", "/downloads", "/movies", "/movies-ro"]
 
 RUN addgroup -g 911 -S abc && adduser -S -u 911 -h /data -s /bin/false -G abc abc
 
